@@ -1,0 +1,22 @@
+{
+  "name": "logging",
+  "version": "1.0.0",
+  "description": "Emumud's logger for outputting to terminals.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emumud/logging.git"
+  },
+  "keywords": [
+    "emumud"
+  ],
+  "author": "Duck Industries",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emumud/logging/issues"
+  },
+  "homepage": "https://github.com/emumud/logging#readme"
+}
