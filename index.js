@@ -304,14 +304,8 @@ function scriptColor(scriptor, user, script, text) {
   return scriptor === '' ? `${_user}${_divider}${_script}` : `${_scriptor}${_user}${_divider}${_script}`;
 }
 
-let users = [];
-
 function getUserColor(user) {
-  if (users.includes(user)) {
-    users.push(user);
-  }
-
-  return userColors[users.indexOf(user) % userColors.length];
+  return userColors[global.users.indexOf(user) % userColors.length];
 }
 
 function parse(str, input) {
@@ -334,8 +328,10 @@ function parse(str, input) {
 
     str = str.replace(':::TRUST COMMUNICATION:::', '`D$&`');
 
-    for (let i = 0; i < users.length; i++) {
-      str = str.replace(new RegExp(`\\B@${users[i]}\\b`, 'g'), `\`0@\`\`${userColors[i % userColors.length]}${users[i]}\``);
+    if (global.users !== undefined) {
+      for (let i = 0; i < global.users.length; i++) {
+        str = str.replace(new RegExp(`\\B@${global.users[i]}\\b`, 'g'), `\`0@\`\`${getUserColor(global.users[i]) + global.users[i]}\``);
+      }
     }
   }
 
